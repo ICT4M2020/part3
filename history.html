@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ICT4M 2020</title>
+
+  <link rel="stylesheet" href="history.css">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <img src="ict4m2020.jpeg" class="logo" width="200px" height="78px">
+    <nav>
+      <div class="topnav">
+        <a href="index.html">Home</a>
+          <div class="subnav">
+            <button class="subnavbtn">About Us<i class="fa fa-caret-down"></i></button>
+            <div class="subnavContent">
+              <a href="intropro.html">Introduction</a>
+              <a href="history.html">History</a></div>
+            </div>
+
+            <a href="speakerspro.html">Speakers</a>
+            <a href="tentative.html">Schedule</a>
+            <div class="subnav">
+              <button class="subnavbtn">Submission<i class="fa fa-caret-down"></i></button>
+                <div class="subnavContent">
+                  <a href="callpapers.html">Call For Papers</a>
+                  <a href="submission.html">Submission Guidelines</a>
+                  <a href="importantdates.html">Important Dates</a></div>
+                </div>
+              <a href="fees_project.html">Conference Fees</a>
+              <a href="registration.html">Registration</a>
+              <a href="contact.html">Contact</a>
+                </div>
+          </nav>
+
+
+
+ <div class="row">
+   <div class="notes">
+       <h1 align="center"><b>Previous ICT4M</b></h1>
+
+       <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="slider_one.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="slider_two.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="slider_three.jpg" style="width:100%">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+       <div class="content">
+
+       <p><b> International Conference on Infomation & Communication Technology for the Muslim World 2018.</b></p>
+       <p><b>• Venue: Kuala Lumpur, Malaysia </b></p>
+       <p><b>• Date: 23-25 July 2018</b></p><br>
+       <p> ICT4M 2018 proceedings</p>
+
+     </div>
+     </div>
+
+   </div>
+
+   <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text"><i>8th International Conference On Information and Communication Technology for The Muslim World</i></h5>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Quick Links</h5>
+            <ul style="list-style: none" >
+              <li><a  class="grey-text text-lighten-3" href="#!">Submission Guidelines</a></li>
+              <li><a  class="grey-text text-lighten-3" href="#!">Call For Papers</a></li>
+              <li><a  class="grey-text text-lighten-3" href="#!">Conference Fees</a></li>
+              <li><a  class="grey-text text-lighten-3" href="registration.html">Registration</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright ICT4M. All rights reserved.Any inquiries please email our secretariat at ict4m@iium.edu.my or call +603-6196 6406
+        </div>
+      </div>
+    </footer>
+
+
+  </body>
+</html>

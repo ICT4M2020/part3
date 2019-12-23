@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <script type="text/javascript" src="jquery.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="registration_style.css">
+  </head>
+  <body>
+    <div class="first">
+
+
+    <img src="pnglogoict4m.png" class="logo" width="200px" height="78px">
+    <nav>
+      <div class="topnav">
+        <a href="#Home">Home</a>
+          <div class="subnav">
+            <button class="subnavbtn">About Us<i class="fa fa-caret-down"></i></button>
+            <div class="subnavContent">
+              <a href="#">Introduction</a>
+              <a href="#">History</a></div>
+            </div>
+
+            <a href="#">Speakers</a>
+              <a href="#">Schedule</a>
+              <div class="subnav">
+                <button class="subnavbtn">Submission<i class="fa fa-caret-down"></i></button>
+                  <div class="subnavContent">
+                    <a href="#">Call For Papers</a>
+                    <a href="#">Submission Guidelines</a>
+                    <a href="#">Important Dates</a></div>
+                  </div>
+                <a href="#">Conference Fees</a>
+                <a href="#">Registration</a>
+                <a href="#">Contact</a>
+                </div>
+          </nav></div>
+
+<div id="content">
+
+<fieldset id="bordergituh">
+    <legend class="l">Econference Registration</legend>
+    <table class="conf">
+        <tbody><tr>
+
+    <td><div class="named">International Conference on Information &amp; Communication Technology for the Muslim World (ICT4M 2020)
+    </div></td>
+                        </tr>
+        <tr>
+                                <td><label class="input select required">Rate</label></td>
+                <td>
+        <!--[if IE]>
+                        <input type="hidden" value="12-01-2017" id="eventStart" name="eventStart">
+                    <![endif]-->
+                    <input type="hidden" value="2017-12-01" id="eventStart" name="eventStart">
+                    <input type="hidden" value="2019-11-14" id="dateNow" name="dateNow">
+                    <select id="condValue" class="conf" name="data[Register][rates_id]" onchange="return selectFirstAmount()">
+                    <option value="121">Local Participant W/out Paper</option>
+                    <option value="122">Intl. Participant W/out Paper</option>
+                    <option value="134">Presenter (International)</option>
+                    <option value="137">Presenter (Local)</option>
+                    <option value="150">Student (Presenter)</option>
+                    <option value="158">Exhibition</option>
+                    <option value="159">Intl. Student (Presenter)</option>
+                    <option value="160">Full-day Workshop(Non-Student)</option>
+                    <option value="161">Mini Workshop (Non-Student)</option>
+                    <option value="164">Presenter (additional 1 paper)</option>
+                    <option value="165">Presenter(additional 2 papers)</option>
+                    <option value="193">Mini Workshop (Student)</option>
+                    <option value="194">Full-day Workshop (Student)</option>
+                </select>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td style="border:none;"><div class="input text required conf confe"><label>Participants</label></div></td>
+            <td>
+                <table id="part"><tbody id="files-root">
+                        <tr>
+                            <td>Name: </td>
+                            <td>Designation: </td>
+                        </tr>
+                        <tr id="participants" name="participants">
+                            <td><input type="text" name="data[Participant][name][]"></td>
+                            <td><input type="text" name="data[Participant][designation][]"></td>
+                            <td>
+                                <span onclick="addFile()" style="cursor:pointer;">
+                                  <img style="width:22px; height:22px;" src="plus.png"></span>
+                            </td>
+                        </tr>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="required">Amount (excl. GST) </label>
+    <input type="hidden" name="data[Register][amount]" id="amount" value="1000.00">                </td>
+            <td><div style="float:left;clear:none;margin-left: -1px;margin-top:-4px;">RM </div><div id="dummy" style="float:left;clear:none;margin-top:-4px;">1000.00</div></td>
+        </tr>
+  <tr>
+            <td>
+                <label class="required">GST Amount</label>
+      <input type="hidden" name="data[Register][gst]" id="gst" value="0.00">                </td>
+            <td><div style="float:left;clear:none;margin-left: -1px;margin-top:-4px;">RM </div><div id="gstDummy" style="float:left;clear:none;margin-top:-4px;">0.00</div></td>
+        </tr>
+  <tr>
+            <td>
+                <label class="required">Total Amount (incl. GST)</label>
+      <input type="hidden" name="data[Register][totalAmount]" id="totalAmount" value="1000.00">                </td>
+            <td><div style="float:left;clear:none;margin-left: -1px;margin-top:-4px;">RM </div><div id="totalDummy" style="float:left;clear:none;margin-top:-4px;">1000.00</div></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="input text required conf confe">
+                    <label for="RegisterOrganization">Organization</label>
+                </div>
+            </td>
+            <td><input type="text" id="RegisterOrganization" maxlength="100" name="data[Register][organization]"></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="input text required conf confe">
+                    <label for="RegisterContactPerson">Contact No</label>
+                </div>
+            </td>
+            <td>
+                Ex: 0123273849 / 0338463345
+                <p>
+                    <input type="text" id="RegisterContactPerson" name="data[Register][contact_person]">
+            </p></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="input text conf confe">
+                    <label for="RegisterFaxNo">Fax No</label>
+                </div>
+            </td>
+            <td>
+                Ex: 0123273849 / 0338463345
+                <p>
+                    <input type="text" id="RegisterFaxNo" name="data[Register][fax_no]">
+            </p></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="input text required conf confe">
+                    <label for="RegisterEmail">Email</label>
+                </div>
+            </td>
+            <td><input type="text" id="RegisterEmail" maxlength="50" class="conf" name="data[Register][email]"></td>
+        </tr>
+  <tr id="RegisterBilling" style="display: none;">
+            <td>
+                <div class="input text required conf confe">
+                    <label for="RegisterBilling">Billing Address</label>
+                </div>
+            </td>
+            <td><textarea class="conf" name="data[Register][billing]" id="address"></textarea></td>
+        </tr>
+    </tbody></table>
+</fieldset>
+<!-- AMOUNT PREPAIR-->
+  <input id="val_121" type="hidden" name="data_121[]" value="600.00">
+    <input id="val_121[]" type="hidden" name="val_121[]" value="1">
+    <input id="val_early_121" type="hidden" name="early_121[]" value="0">
+    <input id="duration_121" type="hidden" name="duration_121[]" value="0">
+<input id="gst_121" type="hidden" name="gst_121[]" value="0.00">
+<input id="gst_amount_121" type="hidden" name="gst_amount_121[]" value="0.00">
+<input id="gst_type_121" type="hidden" name="gst_type_121[]" value="zero-rate">
+<input id="total_121" type="hidden" name="total_121[]" value="600.00">
+    <input id="val_122" type="hidden" name="data_122[]" value="700.00">
+    <input id="val_122[]" type="hidden" name="val_122[]" value="1">
+    <input id="val_early_122" type="hidden" name="early_122[]" value="0">
+    <input id="duration_122" type="hidden" name="duration_122[]" value="0">
+<input id="gst_122" type="hidden" name="gst_122[]" value="0.00">
+<input id="gst_amount_122" type="hidden" name="gst_amount_122[]" value="0.00">
+<input id="gst_type_122" type="hidden" name="gst_type_122[]" value="zero-rate">
+<input id="total_122" type="hidden" name="total_122[]" value="700.00">
+    <input id="val_134" type="hidden" name="data_134[]" value="2000.00">
+    <input id="val_134[]" type="hidden" name="val_134[]" value="1">
+    <input id="val_early_134" type="hidden" name="early_134[]" value="20">
+    <input id="duration_134" type="hidden" name="duration_134[]" value="182">
+<input id="gst_134" type="hidden" name="gst_134[]" value="0.00">
+<input id="gst_amount_134" type="hidden" name="gst_amount_134[]" value="0.00">
+<input id="gst_type_134" type="hidden" name="gst_type_134[]" value="zero-rate">
+<input id="total_134" type="hidden" name="total_134[]" value="2000.00">
+    <input id="val_137" type="hidden" name="data_137[]" value="1500.00">
+    <input id="val_137[]" type="hidden" name="val_137[]" value="1">
+    <input id="val_early_137" type="hidden" name="early_137[]" value="20">
+    <input id="duration_137" type="hidden" name="duration_137[]" value="182">
+<input id="gst_137" type="hidden" name="gst_137[]" value="0.00">
+<input id="gst_amount_137" type="hidden" name="gst_amount_137[]" value="0.00">
+<input id="gst_type_137" type="hidden" name="gst_type_137[]" value="zero-rate">
+<input id="total_137" type="hidden" name="total_137[]" value="1500.00">
+    <input id="val_150" type="hidden" name="data_150[]" value="1000.00">
+    <input id="val_150[]" type="hidden" name="val_150[]" value="1">
+    <input id="val_early_150" type="hidden" name="early_150[]" value="20">
+    <input id="duration_150" type="hidden" name="duration_150[]" value="182">
+<input id="gst_150" type="hidden" name="gst_150[]" value="0.00">
+<input id="gst_amount_150" type="hidden" name="gst_amount_150[]" value="0.00">
+<input id="gst_type_150" type="hidden" name="gst_type_150[]" value="zero-rate">
+<input id="total_150" type="hidden" name="total_150[]" value="1000.00">
+    <input id="val_158" type="hidden" name="data_158[]" value="1000.00">
+    <input id="val_158[]" type="hidden" name="val_158[]" value="1">
+    <input id="val_early_158" type="hidden" name="early_158[]" value="0">
+    <input id="duration_158" type="hidden" name="duration_158[]" value="0">
+<input id="gst_158" type="hidden" name="gst_158[]" value="0.00">
+<input id="gst_amount_158" type="hidden" name="gst_amount_158[]" value="0.00">
+<input id="gst_type_158" type="hidden" name="gst_type_158[]" value="zero-rate">
+<input id="total_158" type="hidden" name="total_158[]" value="1000.00">
+    <input id="val_159" type="hidden" name="data_159[]" value="1600.00">
+    <input id="val_159[]" type="hidden" name="val_159[]" value="1">
+    <input id="val_early_159" type="hidden" name="early_159[]" value="20">
+    <input id="duration_159" type="hidden" name="duration_159[]" value="182">
+<input id="gst_159" type="hidden" name="gst_159[]" value="0.00">
+<input id="gst_amount_159" type="hidden" name="gst_amount_159[]" value="0.00">
+<input id="gst_type_159" type="hidden" name="gst_type_159[]" value="zero-rate">
+<input id="total_159" type="hidden" name="total_159[]" value="1600.00">
+    <input id="val_160" type="hidden" name="data_160[]" value="100.00">
+    <input id="val_160[]" type="hidden" name="val_160[]" value="1">
+    <input id="val_early_160" type="hidden" name="early_160[]" value="0">
+    <input id="duration_160" type="hidden" name="duration_160[]" value="0">
+<input id="gst_160" type="hidden" name="gst_160[]" value="0.00">
+<input id="gst_amount_160" type="hidden" name="gst_amount_160[]" value="0.00">
+<input id="gst_type_160" type="hidden" name="gst_type_160[]" value="zero-rate">
+<input id="total_160" type="hidden" name="total_160[]" value="100.00">
+    <input id="val_161" type="hidden" name="data_161[]" value="50.00">
+    <input id="val_161[]" type="hidden" name="val_161[]" value="1">
+    <input id="val_early_161" type="hidden" name="early_161[]" value="0">
+    <input id="duration_161" type="hidden" name="duration_161[]" value="0">
+<input id="gst_161" type="hidden" name="gst_161[]" value="0.00">
+<input id="gst_amount_161" type="hidden" name="gst_amount_161[]" value="0.00">
+<input id="gst_type_161" type="hidden" name="gst_type_161[]" value="zero-rate">
+<input id="total_161" type="hidden" name="total_161[]" value="50.00">
+    <input id="val_164" type="hidden" name="data_164[]" value="500.00">
+    <input id="val_164[]" type="hidden" name="val_164[]" value="1">
+    <input id="val_early_164" type="hidden" name="early_164[]" value="0">
+    <input id="duration_164" type="hidden" name="duration_164[]" value="0">
+<input id="gst_164" type="hidden" name="gst_164[]" value="0.00">
+<input id="gst_amount_164" type="hidden" name="gst_amount_164[]" value="0.00">
+<input id="gst_type_164" type="hidden" name="gst_type_164[]" value="zero-rate">
+<input id="total_164" type="hidden" name="total_164[]" value="500.00">
+    <input id="val_165" type="hidden" name="data_165[]" value="1000.00">
+    <input id="val_165[]" type="hidden" name="val_165[]" value="1">
+    <input id="val_early_165" type="hidden" name="early_165[]" value="0">
+    <input id="duration_165" type="hidden" name="duration_165[]" value="0">
+<input id="gst_165" type="hidden" name="gst_165[]" value="0.00">
+<input id="gst_amount_165" type="hidden" name="gst_amount_165[]" value="0.00">
+<input id="gst_type_165" type="hidden" name="gst_type_165[]" value="zero-rate">
+<input id="total_165" type="hidden" name="total_165[]" value="1000.00">
+    <input id="val_193" type="hidden" name="data_193[]" value="25.00">
+    <input id="val_193[]" type="hidden" name="val_193[]" value="1">
+    <input id="val_early_193" type="hidden" name="early_193[]" value="0">
+    <input id="duration_193" type="hidden" name="duration_193[]" value="0">
+<input id="gst_193" type="hidden" name="gst_193[]" value="0.00">
+<input id="gst_amount_193" type="hidden" name="gst_amount_193[]" value="0.00">
+<input id="gst_type_193" type="hidden" name="gst_type_193[]" value="zero-rate">
+<input id="total_193" type="hidden" name="total_193[]" value="25.00">
+    <input id="val_194" type="hidden" name="data_194[]" value="50.00">
+    <input id="val_194[]" type="hidden" name="val_194[]" value="1">
+    <input id="val_early_194" type="hidden" name="early_194[]" value="0">
+    <input id="duration_194" type="hidden" name="duration_194[]" value="0">
+<input id="gst_194" type="hidden" name="gst_194[]" value="0.00">
+<input id="gst_amount_194" type="hidden" name="gst_amount_194[]" value="0.00">
+<input id="gst_type_194" type="hidden" name="gst_type_194[]" value="zero-rate">
+<input id="total_194" type="hidden" name="total_194[]" value="50.00">
+        <!-- END AMOUNT PREPAIR-->
+
+
+
+<label id="vvv" class="required" >Payment Via</label>
+
+<div class="payment">
+  <div class="payment_parent">
+    <label style="font-weight:bold;">Credit Card</label>
+    <input type="radio" name="data[Register][payment_mode]" value="migs" id="migs">
+    <label class="visa" style="padding-bottom:8px;">
+      <div class="row">
+
+
+<div class="col">
+
+
+      <img  src="https://img.icons8.com/officel/64/000000/mastercard.png">
+    </div>  <div class="col">
+
+   <img  src="https://img.icons8.com/officel/64/000000/visa.png"></label>
+    </div>  </div>
+      <label style="font-weight:bold;" class="fpxlabel">Debit Account</label>
+    <input type="radio" name="data[Register][payment_mode]" value="fpx" id="fpx">
+    <label><img src="FPXLogo.png" width="80" height="40" style="padding : 10px"></label>
+  </div>
+
+  <!-- Selection Bank -->
+  <div id="bank_list" style="margin-left: -28px; display: none;">
+    <div>
+      <label style="font-weight:bold;">Select Bank</label>
+      <select name="data[Register][bank_code]" id="bank_code">
+        <option value="">-Select One-</option>
+                    <option value="ABB0233">Affin Bank </option>
+                    <option value="ABMB0212">Alliance Bank </option>
+                    <option value="AMBB0209">AmBank </option>
+                    <option value="BSN0601">BSN </option>
+                    <option value="BIMB0340">Bank Islam </option>
+                    <option value="BMMB0341">Bank Muamalat </option>
+                    <option value="BKRM0602">Bank Rakyat </option>
+                    <option value="BCBB0235">CIMB Clicks </option>
+                    <option value="HSBC0223">HSBC Bank </option>
+                    <option value="HLB0224">Hong Leong Bank </option>
+                    <option value="KFH0346">KFH </option>
+                    <option value="MBB0228">Maybank2E </option>
+                    <option value="MB2U0227">Maybank2U </option>
+                    <option value="OCBC0229">OCBC Bank </option>
+                    <option value="PBB0233">Public Bank </option>
+                    <option value="RHB0218">RHB Bank </option>
+                    <option value="SCB0216">Standard Chartered </option>
+                    <option value="UOB0226">UOB Bank </option>
+                  </select>
+    </div>
+    <div>
+      <label style="font-weight:bold;">Email</label>
+      <input type="email" name="EMAIL" id="email" style="width: 129px;">
+    </div>
+    <input type="hidden" name="BE_MESSAGE" value="PBB0233~A,MBB0228~A,BKRM0602~A,ABMB0212~A,MB2U0227~A,BIMB0340~A,BMMB0341~A,KFH0346~A,ABB0233~A,RHB0218~A,OCBC0229~A,SCB0216~A,HLB0224~A,UOB0226~A,BCBB0235~A,AMBB0209~A,BSN0601~A,HSBC0223~A|01|BC|EX00000889">
+  </div>
+
+  <!--ori punya submit button<input name="submit" type="image" src="/econference/img/bank/button_submit.png" style="height:25px;width:60px !important;" value="Save"><br><br> -->
+  <!--<span style='color: red;'>* Currently FPX service was disable for maintenance.</span>-->
+
+      </div>
+  <div class="container-3">
+    <div class="btn btn-three">
+      <span>Submit</span>
+    </div>
+  </div>
+
+
+</form>
+</div>
+<center>
+<table style="background:none; border:none;width:650px">
+<tbody><tr style="background:none; border:none;">
+  <td style="background:none; border:none;">
+    <div id="bankPic">
+    <img src="/econference/img/../img/bank_list/ABB0233_01.png" alt=""><img src="/econference/img/../img/bank_list/ABMB0212_01.png" alt=""><img src="/econference/img/../img/bank_list/AMBB0209_01.png" alt=""><img src="/econference/img/../img/bank_list/BCBB0235_01.png" alt=""><img src="/econference/img/../img/bank_list/BIMB0340_01.png" alt=""><img src="/econference/img/../img/bank_list/HLB0224_01.png" alt=""><img src="/econference/img/../img/bank_list/MB2U0227_01.png" alt=""><img src="/econference/img/../img/bank_list/MBB0227_02.png" alt=""><img src="/econference/img/../img/bank_list/PBB0233_01.png" alt=""><img src="/econference/img/../img/bank_list/RHB0218_01.png" alt=""><img src="/econference/img/../img/bank_list/SCB0215_02.png" alt=""><img src="/econference/img/../img/bank_list/UOB0227_02.png" alt="">				</div>
+  </td>
+</tr>
+<!--<tr>
+  <td style="background:none; border:none;">
+    <div align='center'><strong>* Currently FPX service is available 24 hours daily* at most of the FPX participating banks.</strong></div>
+  </td>
+</tr>-->
+</tbody></table>
+</center>
+<br>
+
+
+<script type="text/javascript">
+var gFiles = 0;
+var no = 1;
+var getGst = null;
+var getGstType = null;
+var getGstAmount = null;
+var getAmount = null;
+var gst = null;
+var gst_type = null;
+var gst_amount = null;
+var amount = null;
+var count = 0;
+var currentAmount = 0;
+var currentCount = 0;
+var currentEarly = 0;
+var rateId = null;
+var getCondArray = null;
+var getAmountArray = null;
+var getCondLegth = null;
+var getEarly = null;
+var currentDuration = 0;
+var tempAmount = 0;
+var lastAmount = 0;
+var lastGst = 0;
+var lastTotal = 0;
+
+function addFile() {
+    var tr = document.createElement('tr');
+    tr.setAttribute('id', 'file-' + gFiles);
+    var td = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+    td.innerHTML = "<input type='text' name='data[Participant][name][]'/>";
+    td2.innerHTML = "<input type='text' name='data[Participant][designation][]'/>";
+    td3.innerHTML = "<span onclick='addFile()' style='cursor:pointer;'><img style='width:22px; height:22px;' src='plus.png'></span>&nbsp;<span onclick='removeFile(\"file-" + gFiles + "\")' style='cursor:pointer;'><img style='width:22px; height:22px;' src='minus.png'></span>";
+    tr.appendChild(td);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    document.getElementById('files-root').appendChild(tr);
+    gFiles++;
+    no ++;
+    amountAdd(no)
+}
+function removeFile(aId) {
+    var obj = document.getElementById(aId);
+    obj.parentNode.removeChild(obj);
+    no --;
+    removeAmount(no)
+}
+
+function amountAdd(no){
+selectFirstAmount();
+    for(i=0; i < getCondLegth.length; i++){
+        if(no == getCondLegth[i].value){
+            currentAmount = getAmountArray[i].value;
+            currentCount = getCondLegth[i].value;
+            currentEarly = getEarly[i].value;
+            currentDuration = getDuration[i].value;
+    gst = getGst[i].value;
+    gst_type = getGstType[i].value;
+    gst_amount = getGstAmount[i].value;
+    amount = getAmount[i].value;
+    if(gst_type == 'zero-rate'){
+      var lastAmount = currentAmount*no;
+      var lastGst = 0;
+      var lastTotal = lastAmount;
+      document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+    document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+    document.getElementById('gst').value = lastGst.toFixed(2);
+    document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+    document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+    }else{
+      var lastAmount = currentAmount*no;
+      var lastGst = gst_amount*no;
+      var lastTotal = lastAmount+lastGst;
+      document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+    document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+    document.getElementById('gst').value = lastGst.toFixed(2);
+    document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+    document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+    }
+            count = i;
+
+            break;
+        }
+    }
+
+    var eventStart = document.getElementById("eventStart").value;
+    var dateNow = document.getElementById("dateNow").value;
+    var discount = currentEarly;
+
+    // function to set date
+    Date.prototype.addDays = function(days)
+    {
+        var dat = new Date(this.valueOf())
+        dat.setDate(dat.getDate()+days);
+        return dat;
+    }
+    var newDuration = Number(currentDuration);
+    var dat = new Date(eventStart);
+    var dated = dat.addDays(newDuration);
+
+    var earlyAfter = dated.getFullYear().toString() + "-" +
+        (dated.getMonth()+1 < 10 ? "0" + (dated.getMonth()+1).toString() : (dated.getMonth()+1).toString()) + "-" +
+        (dated.getDate() < 10 ? "0" + dated.getDate().toString() : dated.getDate().toString());
+    // end function to set date
+    document.getElementById('announce').style.visibility = "hidden";
+
+    if(dateNow >= eventStart && dateNow < earlyAfter && discount != 0 && currentDuration != 0)
+    {
+        if(gst_type == 'zero-rate'){
+    tempAmount = currentAmount*no;
+    lastAmount = (tempAmount-(tempAmount*(discount/100)));
+    lastGst = 0;
+    lastTotal = lastAmount;
+    document.getElementById('dummy').innerHTML = +lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+document.getElementById('gst').value = lastGst.toFixed(2);
+document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+  }else{
+    tempAmount = currentAmount*no;
+    lastAmount = (tempAmount-(tempAmount*(discount/100)));
+    lastGst = (gst_amount-(gst_amount*(discount/100)))*no;
+    lastTotal = lastAmount+lastGst;
+    document.getElementById('dummy').innerHTML = +lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+document.getElementById('gst').value = lastGst.toFixed(2);
+document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+  }
+        document.getElementById('announce').style.visibility = "visible";
+        var d1=new Date(earlyAfter);
+        document.getElementById('dateEarlyAfter').innerHTML = (dated.getDate() < 10 ? "0" + dated.getDate().toString() : dated.getDate().toString()) + "-" +
+            (dated.getMonth()+1 < 10 ? "0" + (dated.getMonth()+1).toString() : (dated.getMonth()+1).toString()) + "-" +
+            dated.getFullYear().toString();
+        document.getElementById('dateEarly').innerHTML = currentEarly+'%';
+    }
+
+}
+
+function removeAmount(no){
+selectFirstAmount()
+    for(i=0; i < getCondLegth.length; i++){
+        if(no == getCondLegth[i].value){
+            currentAmount = getAmountArray[i].value;
+            currentCount = getCondLegth[i].value;
+            currentEarly = getEarly[i].value;
+            currentDuration = getDuration[i].value;
+
+    gst = getGst[i].value;
+    gst_type = getGstType[i].value;
+    gst_amount = getGstAmount[i].value;
+    amount = getAmount[i].value;
+
+    if(gst_type == 'zero-rate'){
+      var lastAmount = currentAmount*no;
+      var lastGst = 0;
+      var lastTotal = lastAmount;
+      document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+    document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+    document.getElementById('gst').value = lastGst.toFixed(2);
+    document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+    document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+    }else{
+      var lastAmount = currentAmount*no;
+      var lastGst = gst_amount*no;
+      var lastTotal = lastAmount+lastGst;
+      document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+    document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+    document.getElementById('gst').value = lastGst.toFixed(2);
+    document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+    document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+    }
+      break;
+    }
+  }
+    if(no < currentCount){
+        count --;
+  if(count < 0){
+    count = 0;
+  }
+        currentAmount = getAmountArray[count].value;
+        currentEarly = getEarly[count].value;
+        currentDuration = getDuration[count].value;
+
+  gst = getGst[count].value;
+  gst_type = getGstType[count].value;
+  gst_amount = getGstAmount[count].value;
+  amount = getAmount[count].value;
+
+  if(gst_type == 'zero-rate'){
+    var lastAmount = amount*no;
+    var lastGst = 0;
+    var lastTotal = lastAmount;
+    document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+    document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+    document.getElementById('gst').value = lastGst.toFixed(2);
+    document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+    document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+  }else{
+    var lastAmount = amount*no;
+    var lastGst = gst_amount*no;
+    var lastTotal = lastAmount+lastGst;
+    document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+    document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+    document.getElementById('gst').value = lastGst.toFixed(2);
+    document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+    document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+  }
+    }
+
+    var eventStart = document.getElementById("eventStart").value;
+    var dateNow = document.getElementById("dateNow").value;
+    var discount = currentEarly;
+
+    // function to set date
+    Date.prototype.addDays = function(days)
+    {
+        var dat = new Date(this.valueOf())
+        dat.setDate(dat.getDate()+days);
+        return dat;
+    }
+    var newDuration = Number(currentDuration);
+    var dat = new Date(eventStart);
+    var dated = dat.addDays(newDuration);
+
+    var earlyAfter = dated.getFullYear().toString() + "-" +
+        (dated.getMonth()+1 < 10 ? "0" + (dated.getMonth()+1).toString() : (dated.getMonth()+1).toString()) + "-" +
+        (dated.getDate() < 10 ? "0" + dated.getDate().toString() : dated.getDate().toString());
+    // end function to set date
+    document.getElementById('announce').style.visibility = "hidden";
+    if(dateNow >= eventStart && dateNow < earlyAfter && discount != 0 && currentDuration != 0)
+    {
+        if(gst_type == 'zero-rate'){
+    var tempAmount = currentAmount*no;
+    var lastAmount = (tempAmount-(tempAmount*(discount/100)));
+    var lastGst = 0;
+    var lastTotal = lastAmount;
+    document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+    document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+    document.getElementById('gst').value = lastGst.toFixed(2);
+    document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+    document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+  }else{
+    var tempAmount = currentAmount*no;
+    var lastAmount = (tempAmount-(tempAmount*(discount/100)));
+    var lastGst = (gst_amount-(gst_amount*(discount/100)))*no;
+    var lastTotal = lastAmount+lastGst;
+    document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+    document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+    document.getElementById('gst').value = lastGst.toFixed(2);
+    document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+    document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+  }
+        document.getElementById('announce').style.visibility = "visible";
+        var d1=new Date(earlyAfter);
+        document.getElementById('dateEarlyAfter').innerHTML = (dated.getDate() < 10 ? "0" + dated.getDate().toString() : dated.getDate().toString()) + "-" +
+            (dated.getMonth()+1 < 10 ? "0" + (dated.getMonth()+1).toString() : (dated.getMonth()+1).toString()) + "-" +
+            dated.getFullYear().toString();
+        document.getElementById('dateEarly').innerHTML = currentEarly+'%';
+    }
+}
+
+function validate() {
+    var name = document.getElementsByName('data[Participant][name][]');
+    var designation = document.getElementsByName('data[Participant][designation][]');
+    var total="";
+    var total2="";
+    var registerOrganization = document.getElementById('RegisterOrganization').value;
+    var registerContactPerson = document.getElementById('RegisterContactPerson').value;
+    var registerEmail = document.getElementById('RegisterEmail').value;
+    var radio = document.getElementsByName('data[Register][payment_mode]');
+
+    for(var i=0; i < name.length; i++){
+        total = name[i].value;
+        total2 = designation[i].value;
+    }
+
+    if(total == "" || total2 == ""){
+        alert("Please insert Participant field.");
+        return false;
+    }
+    if(registerOrganization == ''){
+        alert('Please fill the Organization field.');
+        return false;
+    }
+    if(registerContactPerson == ''){
+        alert('Please fill the Contact person field.');
+        return false;
+    }else{
+        if(isNaN(registerContactPerson)){
+            alert ("Please enter a valid phone number for Contact person");
+            return false;
+        }
+    }
+
+    if(registerEmail == ''){
+        alert('Please fill the Email field.');
+        return false;
+    }else{
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var address = registerEmail;
+        if(reg.test(address) == false) {
+            alert('Invalid Email Address');
+            return false;
+        }
+    }
+
+if ($('#RegisterPaymentModeMigs').is(':checked') && $('#address').val() == '') {
+  alert('Please Enter Billing Address.'); return false; }
+if (($('#bank_code').val() == '') && ($('#fpx').is(':checked'))) { $('#bank_code').focus();
+ alert('Please Select The Bank.'); return false;}
+return true;
+
+    var myOption = -1;
+    for (i=radio.length-1; i > -1; i--) {
+        if (radio[i].checked) {
+            myOption = i; i = -1;
+        }
+    }
+    if (myOption == -1) {
+        alert("You must select a via payment");
+        return false;
+    }
+
+
+
+}
+
+function selectFirstAmount(){
+    rateId = document.getElementById('condValue').value;
+    getCondArray = document.getElementById('val_'+rateId).value;
+    getAmountArray = document.getElementsByName('data_'+rateId+'[]');
+    getCondLegth = document.getElementsByName('val_'+rateId+'[]');
+    getEarly = document.getElementsByName('early_'+rateId+'[]');
+    getDuration = document.getElementsByName('duration_'+rateId+'[]');
+getGst = document.getElementsByName('gst_'+rateId+'[]');
+getGstType = document.getElementsByName('gst_type_'+rateId+'[]');
+getGstAmount = document.getElementsByName('gst_amount_'+rateId+'[]');
+getAmount = document.getElementsByName('total_'+rateId+'[]');
+
+    for(i=0; i < getCondLegth.length; i++){
+        if(no == getCondLegth[i].value){
+            currentAmount = getAmountArray[i].value;
+            currentCount = getCondLegth[i].value;
+            currentEarly = getEarly[i].value;
+            currentDuration = getDuration[i].value;
+
+    gst = getGst[i].value;
+    gst_type = getGstType[i].value;
+    gst_amount = getGstAmount[i].value;
+    amount = getAmount[i].value;
+
+    var lastTotal = amount*no;
+    var lastGst = gst_amount*no;
+    if(gst_type == 'zero-rate'){
+      var lastAmount = lastTotal;
+      document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+document.getElementById('gst').value = lastGst.toFixed(2);
+document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+    }else{
+      var lastAmount = lastTotal-lastGst;
+      document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+document.getElementById('gst').value = lastGst.toFixed(2);
+document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+    }
+            break;
+        }else{
+            currentAmount = getAmountArray[count].value;
+            currentCount = getCondLegth[count].value;
+            currentEarly = getEarly[count].value;
+            currentDuration = getDuration[count].value;
+
+    gst = getGst[count].value;
+    gst_type = getGstType[count].value;
+    gst_amount = getGstAmount[count].value;
+    amount = getAmount[count].value;
+
+    var lastTotal = amount*no;
+    var lastGst = gst_amount*no;
+    if(gst_type == 'zero-rate'){
+      var lastAmount = lastTotal;
+      document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+document.getElementById('gst').value = lastGst.toFixed(2);
+document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+    }else{
+      var lastAmount = lastTotal-lastGst;
+      document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+document.getElementById('gst').value = lastGst.toFixed(2);
+document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+    }
+
+            break;
+        }
+    }
+
+    var eventStart = document.getElementById("eventStart").value;
+    var dateNow = document.getElementById("dateNow").value;
+    var discount = currentEarly;
+
+    // function to set date
+    Date.prototype.addDays = function(days)
+    {
+        var dat = new Date(this.valueOf())
+        dat.setDate(dat.getDate()+days);
+        return dat;
+    }
+    var newDuration = Number(currentDuration);
+    var dat = new Date(eventStart);
+    var dated = dat.addDays(newDuration);
+
+    var earlyAfter = dated.getFullYear().toString() + "-" +
+        (dated.getMonth()+1 < 10 ? "0" + (dated.getMonth()+1).toString() : (dated.getMonth()+1).toString()) + "-" +
+        (dated.getDate() < 10 ? "0" + dated.getDate().toString() : dated.getDate().toString());
+    // end function to set date
+    document.getElementById('announce').style.visibility = "hidden";
+    if(dateNow >= eventStart && dateNow < earlyAfter && discount != 0 && currentDuration != 0)
+    {
+
+  if(gst_type == 'zero-rate'){
+    var lastAmount = lastTotal-(lastTotal*(discount/100));
+    var lastGst = 0;
+    var lastTotal = lastAmount;
+    document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+document.getElementById('gst').value = lastGst.toFixed(2);
+document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+  }else{
+    var tempTotal = +lastTotal-lastGst;
+    var lastAmount = +tempTotal-(tempTotal*(discount/100));
+
+    var tempGst = +gst_amount*no;
+    var lastGst = +tempGst-(tempGst*(discount/100));
+
+    var lastTotal = lastAmount+lastGst;
+    document.getElementById('dummy').innerHTML = lastAmount.toFixed(2);
+    document.getElementById('amount').value = lastAmount.toFixed(2);
+document.getElementById('gstDummy').innerHTML = lastGst.toFixed(2);
+document.getElementById('gst').value = lastGst.toFixed(2);
+document.getElementById('totalDummy').innerHTML = lastTotal.toFixed(2);
+document.getElementById('totalAmount').value = lastTotal.toFixed(2);
+  }
+
+        document.getElementById('announce').style.visibility = "visible";
+        var d1=new Date(earlyAfter);
+        document.getElementById('dateEarlyAfter').innerHTML = (dated.getDate() < 10 ? "0" + dated.getDate().toString() : dated.getDate().toString()) + "-" +
+            (dated.getMonth()+1 < 10 ? "0" + (dated.getMonth()+1).toString() : (dated.getMonth()+1).toString()) + "-" +
+            dated.getFullYear().toString();
+        document.getElementById('dateEarly').innerHTML = currentEarly+'%';
+    }
+
+
+}
+$(document).ready(function() {
+$('#RegisterBilling').hide();
+$('#bank_list').hide();
+$('#migs').click(function(){
+$('#RegisterBilling').show();
+$('#bank_list').hide();
+});
+if (($('#migs').attr('checked')) && (!$('#address').val())) { alert('Please Enter Billing Address.'); return false; }
+$('#fpx').click(function(){
+$('#RegisterBilling').hide();
+$('#address').val('');
+$('#bank_list').show();
+});
+});
+</script>
+              </div>
+
+              <footer class="page-footer">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col2">
+                          <h4 ><i>8th International Conference On Information and Communication Technology for The Muslim World</i></h4>
+                        </div>
+                        <div class="col3">
+                          <h5 class="white-text">Quick Links</h5>
+                          <ul style="list-style: none" >
+                            <li><a  class="grey-text text-lighten-3" href="#!">Registration</a></li>
+                            <li><a  class="grey-text text-lighten-3" href="#!">Call For Papers</a></li>
+                            <li><a  class="grey-text text-lighten-3" href="#!">Conference Fees</a></li>
+                            <li><a  class="grey-text text-lighten-3" href="registration.html">Submission Guidelines</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer-copyright">
+                      <div class="container">
+                      © 2014 Copyright ICT4M. All rights reserved.Any inquiries please email our secretariat at ict4m@iium.edu.my or call +603-6196 6406
+                      </div>
+                    </div>
+                  </footer>
+
+
+
+  </body>
+</html>

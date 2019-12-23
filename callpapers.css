@@ -5,7 +5,7 @@ body {
 }
 
 img {
-  margin-left: 43%;
+  margin-left: 44%;
   box-sizing: border-box;
   display: inline;
 
@@ -13,9 +13,9 @@ img {
 .topnav {
   overflow: hidden;
   background-color: transparent;
-  padding-left: 13%;
+  padding-left: 17%;
   margin-top: 10px;
-  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Navigation links */
@@ -84,10 +84,12 @@ img {
 .subnav:hover .subnavContent {
   display: inline-flex;
 }
-
-h1 {
+h1{
+  font-style: bold;
   font-size: 50px;
-  padding: 30px;
+padding-right: 50px;
+padding-bottom: 20px;
+padding-left: 50px;
   color: #e84855;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -105,8 +107,8 @@ p {
   color: black;
   overflow: hidden;
   text-align: left;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 64px;
+  padding-right: 66px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -137,3 +139,46 @@ ul {
 	border-top: 0;
 	overflow: auto;
 }
+
+/*footer*/
+
+/* footer */
+.page-footer{
+  font-family: 'Montserrat', sans-serif;
+  background: #CE67CA;
+background: -moz-linear-gradient(top, #CE67CA 0%, #5500A4 100%, #C59237 100%);
+background: -webkit-linear-gradient(top, #CE67CA 0%, #5500A4 100%, #C59237 100%);
+background: linear-gradient(to bottom, #CE67CA 0%, #5500A4 100%, #C59237 100%);
+padding: 15px 30px 30px 30px;
+
+  text-align: center;
+}
+.page-footer a{
+  color:white
+}
+.page-footer li:hover{
+  text-decoration: underline;
+}
+.page-footer a:link{
+  text-decoration: none;
+}
+.page-footer li:active{
+  text-decoration: underline;
+}
+.page-footer h4{
+  color: black
+}
+.page-footer h5{
+  font-size: 18px;
+  color: white;
+}
+.page-footer ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-right: 40px;
+}
+

@@ -233,7 +233,7 @@ background: linear-gradient(to bottom, #CE67CA 0%, #5500A4 100%, #C59237 100%);
   text-align: center;
 }
 a{
-  color:white;
+  color:black;
 }
  li:hover{
   text-decoration: underline;
